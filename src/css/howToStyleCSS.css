@@ -1,0 +1,84 @@
+/* This script is not imported in 'script.js' it's just an example for beginners */
+
+    /* 1 NAMING CONVENTION: */
+    /* (1.1)tag name (generic): div, a, li, ul, body, nav */
+
+    div,a,li{background: red !important;}
+
+    /* (1.2) access by element-id '#'elementId  (no multiple id on same elem) */
+    /* for example, if in your html you have 
+            '<div id="ciao"> ... </div>'  
+    then you gonna address it directly by saying */
+    #ciao{background: red;}
+
+    /* (1.3 )access by class '.'elementClassName (you can use same class on multiple elements) 
+    Can I set multiple classes on the same element also? yes, just separate them with a single space.
+        <div class="A B"> </div>  
+            so u can access like ".A" or ".B" 
+    Instead if you say 
+        <div class="A-B"> 
+            this will be a single class. Usually you use '-' or '_' to separate words better to be more expressive, in example:
+                "div-to-be-shared" is a single class wich tells exactly your purposes */
+    .A{ border-radius: 10px;}
+
+    /* IN OTHER WORDS: 
+        if you see '.word' you will know that word is a class
+        if you see '#word' you will understand you are accessing an element id (generally unique one)
+        if you see 'word' it is really strange and probably will produce errors because 'word' is not a default tag-name, 
+            (most used tagname are: "div, body, html, ul, li, h1, p, fieldset, ...")
+
+
+/* 2 ACCESSING THINGS SPECIFICALLY */
+/* It is pretty mad to give id to every element in an html, sometimes you can find cool to access all elements with one command 
+ that fulfill one condition, like sharing a class, or, even more specifically, being children of the same big element */
+
+    /* (2.1) use '>' to access the "first depth" children(s). hover you mouse on the word '>div' below to see the structure you gonna access */
+    #container>div{ background: orange;}
+
+    /* (2.2) use ' ' to access all children(s) of specified type */
+    #container div{ background: yellow;}
+
+    /* (2.3) concatenate the conditions: for example, if you have multiple objects of class "child" and you want some of them to be also
+    "female", add the female class to those elements in the html. then, write: */
+    .child.female{ font-size: 2em; }
+        /* or, if you never used the female class on other things */
+        .female{ background: green;}
+
+/* 3 POSITIONING THINGS ON THE PAGE 
+
+    first of all:  units of distance. 
+        'px' (pixels),  
+        '%'  (percentage with respect to the parent element)  
+        'vw' (viewport width: the horizontal dimension of your device display)
+        'vh' (viewport height: the vertical dimension of your device display)
+        'em' (unit used for text, but you can also use 'px' for text. say " font-size:'1em' " to display text on default size)
+
+How to place things? -> By default, when you create distinct objects the html places them in column, you can place things where you want
+by editing the property 'position' and related ones. 
+    (!) Good practice: make always the background with some color, not transparent, to know exactly where your
+    element starts and ends. And put some text in it, or force its width/height. 
+    Then, when you are happy, remove the background color. 
+    (!) Don't get confused: positioning the divs is different from positioning the text that is inside. If you want to justify the text,
+    you better search on internet what you want to achieve. 
+*/
+
+/* Auxiliary link: https://www.w3schools.com/css/css_positioning.asp */
+/* 'fixed' means that the element follows the user point of view. even if he scrolls down the page */
+#elem1{ background: blue; position: fixed; top: 50px; width: 100vw; height: 10vh; }
+
+/* 'absolute' means that the element is free to move inside and outside of its parent. 
+    By the way, the position of his parent is specific, so when the user scrolls the page the element will be lost. */
+#elem2{ background: orange; position: absolute; top: 50px; width: 100vw; height: 10vh; }
+
+/* 'relative' means that the element is placed exactly after his brother. it is no sense to use 'top', 'left', 'bottom'..
+when you specify "position:relative", you should use margin-left, margin-top and so on.. */
+#elem3a{ background: red; position: relative; margin-top: 10%; margin-left: 40px;}
+#elem3b{ background: yellow; position: relative; margin-top: 10%; margin-left: 40px;}
+
+/* You can also specify some particular spacing that the parent applies to all its content */
+#container{ padding: 10px; }
+
+/* (!) If you need to make a composition, you should ignore the 'position' property and use
+"display: flex" on the container. See the visual guide at the link: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
+

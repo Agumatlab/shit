@@ -1,0 +1,182 @@
+#p10{
+    background-image: url('./img_home/p10back.jpg');
+   background-size:     cover;  
+   background-repeat:   no-repeat;
+   background-position: center center; 
+    overflow: hidden;
+}
+
+.coverbck{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .3;
+    background: radial-gradient(
+        farthest-corner at 20% 20%,
+        rgb(211, 211, 255),rgb(84, 95, 217),
+        rgb(20, 34, 94),black);
+}
+
+.spotlight{ 
+    transform-origin: center center;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: rgb(121, 194, 117); opacity: .5;
+    position: absolute;
+    top: 50%; left: 10%;
+    box-shadow: 0px 0px 80px 10px green;
+}
+
+@keyframes spot1move{
+    15%{top: 25%; left: 40%; scale: 5;}
+    55%{top: 70%; left: 90%; scale: 3;}
+    75%{top: 65%; left: 10%; scale: 6;}
+    90%{top: 10%; left: 70%; scale: 2;}
+}
+@keyframes spot2move{
+    25%{top: 75%; left: 10%; scale: 3;}
+    45%{top: 30%; left: 90%; scale: 4;}
+    80%{top: 15%; left: 50%; scale: 2;}
+}
+
+#spot1{ top: 50%; left:80%; 
+        animation: spot1move 30s infinite;}
+#spot2{ animation: spot2move 25s infinite;}
+
+
+#loginform {
+    max-width: min(80vw,350px);
+    border-radius: 5px;
+    backdrop-filter: blur(2px);
+    
+    position: absolute;
+    right: 0; left: 0;
+    margin-inline: auto;
+    padding: 15px;
+    margin-top: 25vh;
+    /* max-height: 50vh; */
+    display: flex; 
+    justify-content: center;
+    flex-direction: column;
+}
+
+#loginform fieldset{
+    display: flex; flex-direction: column;
+    gap: 20px;
+    border: none;
+    text-align: center;
+}
+
+#loginform ::placeholder{text-align: center; color:var(--clr-text);}
+#loginform input:hover::placeholder {color:white; }
+#loginform input:hover {background: var(--clr-heading); color:white;}
+
+#loginform input{
+    border-radius: 5px; 
+    border: 1px solid var(--gold1);
+    font-size: 1.2em;
+    padding: 1em 2.5em 1em 2.5em;
+    height: 1.5em;
+    box-sizing: border-box;
+}
+
+#loginform i{
+    position: absolute;
+    font-size: 1.2em;
+    border-radius: 100%;
+    width: 2em; height: 2em;
+    line-height: 2.5em;
+    left: 8%;
+    
+    /* background: var(--clr-heading);
+    border: 1px solid var(--gold1); */
+}
+
+#loginform:has(button:visited) input:invalid{
+    animation: shake .5s; background: rgb(213, 129, 129);
+}
+
+@keyframes shake{
+     0%{transform: translateX( 0px);}
+    49%{transform: translateX( 0px);}
+    50%{transform: translateX( 2px);}
+    60%{transform: translateX( 4px);}
+    70%{transform: translateX(-4px);}
+    80%{transform: translateX( 4px);}
+    90%{transform: translateX(-4px);}
+    100%{transform: translateX(0px);}
+}
+
+#p10 h1, #p10 p{
+    position: absolute;
+    color: white;
+    left:0; right:0; margin-inline: auto;
+    width: fit-content;
+}
+
+#p10 h1{ font-size: min(10vw,4em); top: 5vh; margin: 0 auto;}
+#p10 p{ font-size: min(3vw,1em); top: 18vh; 
+    backdrop-filter: blur(3px); padding: 4px 8px;}
+
+#loginform button{
+    
+    transition: all 1s;
+    vertical-align:middle;
+    align-self: center;
+    width: 2em; 
+    height: 2em;
+    font-size: 1em;
+    inline-size: 4em; line-height: 1em;
+    color: white;
+    border-radius: 1.5em;
+    border: 3px solid var(--clr-heading);
+    background: linear-gradient( to left, var(--g1), var(--g2));
+    display: flex;
+    justify-content: center;
+    gap: 5px; align-items: center;
+}
+
+#rem-me, #law-me{
+    display: flex;
+    justify-content: left;
+    margin-left: 2%;
+    /* background: red; */
+}
+
+#p10 input[type=checkbox]{ 
+    width: 1em; 
+    height: 1em;
+    accent-color: var(--clr-heading);
+    display: inline-block;
+}
+
+#p10 label{ 
+    line-height: 1.5em;
+    margin-left: 5px;
+    display: inline-block;
+    color: white;
+}
+
+:where(div:hover>i){color: white;}
+
+#loginform:has(input:invalid) button{
+    animation: shake 6s infinite;
+    background:  rgb(213, 129, 129);
+    border-color: red;
+}
+
+#loginform:not(:has(input:invalid)) button::before{  content: "sign in";}
+#loginform:not(:has(input:invalid)) button{  width: 150px;}
+#loginform:not(:has(input:invalid)) button:hover{ 
+    background: var(--g0);
+}
+
+#p10:not(:has(input:invalid)) .spotlight{ 
+    animation: convergi 2s 1 ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes convergi{
+    100%{   left: 47.5%; top: 60%; scale: 5; }
+}

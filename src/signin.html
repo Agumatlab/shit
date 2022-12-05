@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova</title>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+</head>
+<body>
+    <!-- <h2>Benvenuto!</h2>
+    <p>Log in!</p> -->
+
+    <div class="fullScreen" id="p10">
+    <div class="coverbck" id="cover1"></div>
+    <div class="spotlight" id="spot1"></div>
+    <div class="spotlight" id="spot2"></div>
+
+    <!-- <div id="loginTitle"> -->
+        <!-- <ion-icon name="person-circle-outline"></ion-icon> -->
+        <h1>Sign in</h1>
+    <!-- </div> -->
+    <p>Start your experience with 4AGER</p>  
+    <form method="POST"  id="loginform">
+                  
+        <fieldset name="identity">
+            
+            <div> 
+                <i><ion-icon name="person-add-outline"></ion-icon></i>
+                <input type="text" name="name" pattern="[A-z ]+" placeholder="Enter you name*" required>
+            </div>
+            <div>
+                <i><ion-icon name="at-outline"></ion-icon></i>
+                <input type="email" name="email"  placeholder="Enter email*" required>
+            </div>
+            <div>
+                <i><ion-icon name="call-outline"></ion-icon></i>
+                <input type="tel" name="phone" pattern="\+?[0-9]{1,11}" placeholder="Enter phone*" pattern=[0-9\+] required>
+            </div>
+            <div>
+                <i><ion-icon name="keypad-outline"></ion-icon></i>
+                <input type="password" name="password" id="new-password" placeholder="Enter password*" autocomplete="new-password" required>
+            </div>
+            <div>
+                <div id="rem-me"><input type="checkbox" name="remember-me" value="lsRememberMe"><label for="remember-me">Remember me</label></div>
+                <div id="law-me"><input type="checkbox" name="terms-ok" value="terms-ok" required><label for="terms-ok">I accept terms</label></div>
+            </div>
+        
+
+            <!-- reCaptcha Key: 6Le8IVMjAAAAAIRgNNfcTiHhCJ-y82-ZJItalgED -->
+        
+            <!-- <button class="g-recaptcha" 
+            data-sitekey="6Le8IVMjAAAAAIRgNNfcTiHhCJ-y82-ZJItalgED" 
+            data-callback='onSubmit' 
+            data-action='submit'>Human, after all</button> -->
+        </fieldset>
+        <button type="submit"><div></div><div><ion-icon name="leaf-outline"></ion-icon></div></button>
+    </form>
+    
+        
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+    </div>
+
+    <!--     
+        <div class="col s12 m6 offset-m3 center-align">
+            <a class="oauth-container btn darken-4 white black-text" href="/users/google-oauth/" style="text-transform:none">
+                <div class="left">
+                    <img width="20px" style="margin-top:7px; margin-right:8px" alt="Google sign-in" 
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                </div>
+                Login with Google
+            </a>
+        </div>
+        
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
+
+    <!-- reCaptcha code
+         <script>
+        function onSubmit(token) {
+          document.getElementById("demo-form").submit();
+        }
+      </script> -->
+</body>
+
+</html>

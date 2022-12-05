@@ -1,0 +1,154 @@
+
+#p7{ 
+    position: relative;
+    padding-top: 20px;
+
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    background: var(--clr-body-bg);
+}
+
+#p7msg{
+    text-align: center;
+   
+    font-size: 50px;
+    
+    padding: 50px 0 50px;
+    color: var(--clr-text);
+    
+    min-height: 200px;
+    background: linear-gradient(to bottom, var(--clr-body-bg),
+    var(--g0),var(--g1));
+}
+
+#p7main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    width: 100%;
+    height: max-content;
+    justify-content: center;
+    gap: 0;
+    padding: min(100px, 30vw) 0;
+    background: var(--clr-body-bg);
+}
+
+.p7child{ 
+    flex-basis: 5%; 
+    position: relative;
+    height: 100%;
+    overflow: visible;
+
+    /* background: red; */
+    /* border: 1px solid red; */
+}
+
+.p7ico{
+    position: absolute;
+    
+    top: 0%; left: 0; /*sposta di metà eccesso da 100%*/
+    
+    width: 100% !important;
+    height: 100% !important;
+
+    z-index: 1;
+    transition: all 2s;
+    
+    /* background-image: url(./img_home/sat.png);
+    overflow: visible;
+    background-size:    contain;
+    background-repeat:   no-repeat;
+    background-position: center center; */
+    /* border: 5px solid green; */
+}
+
+.p7child .info{ 
+    z-index: 2;
+
+    position: absolute;
+    background: white; 
+    border-radius: 10px; 
+    box-shadow: 2px 2px gray,
+        -2px 2px gray;
+    
+        font-size: 1em; 
+    
+    height: fit-content; 
+    text-align: center;
+    padding: 10px
+}
+
+.triangle{
+    border: 20px solid ; 
+    position: relative;
+    
+    width: min(250px,50vw);    height: min(250px,50vw);
+    
+    transform-origin: center;
+    text-align: center;
+
+    margin: auto;    padding: 0;
+    overflow: visible;
+    transition: all 1s;
+}
+
+
+/* I should define an Animation before assigning it to ".triangle" */
+@-webkit-keyframes rotating {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+@keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+}
+
+.triangle {
+    -webkit-animation: rotating 100s linear infinite;
+    -moz-animation: rotating 100s linear infinite;
+    -ms-animation: rotating 100s linear infinite;
+    -o-animation: rotating 100s linear infinite;
+    animation: rotating 100s linear infinite;
+}
+
+#p7t1{ color: var(--gold1);}
+#p7t2{ color: var(--g3); }
+#p7t3{ color: var(--gold2);}
+
+.p7child:hover .triangle{ 
+    scale: .5;
+    transition: all 1s;
+    animation-duration: 5s;
+}
+
+.p7child:hover #p7t1{background: radial-gradient(var(--clr-body-bg),var(--gold1));}
+.p7child:hover #p7t2{background: radial-gradient(var(--clr-body-bg),var(--g3));}
+.p7child:hover #p7t3{background: radial-gradient(var(--clr-body-bg),var(--gold2));}
+
+ .p7child:hover .p7ico{ 
+    /* transform: rotateZ(180deg); */
+    transition: all 2s;
+}
