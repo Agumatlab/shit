@@ -78,7 +78,7 @@ icons.forEach((item) =>
 const content = document.querySelectorAll('main>div')
     
 const appearOnScroll = function(){
-    var r = Math.round;
+    
     var y=window.scrollY;
     content.forEach( (elem) =>{
     var top = elem.getBoundingClientRect().top + document.documentElement.scrollTop
@@ -88,10 +88,12 @@ const appearOnScroll = function(){
     if ( y+500>=top ){  //y>=top
         // elem.style.opacity = 1
         elem.classList.add('on-view');
-    } else{
-        // elem.style.opacity = .2
-        elem.classList.remove('on-view');
-    } })
+    } 
+    // else{
+    //     // elem.style.opacity = .2
+    //     elem.classList.remove('on-view');
+    // } 
+})
 };
 
 window.addEventListener("scroll", appearOnScroll)

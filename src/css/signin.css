@@ -3,7 +3,9 @@
    background-size:     cover;  
    background-repeat:   no-repeat;
    background-position: center center; 
-    overflow: hidden;
+   overflow: hidden;
+    width: 100vw;
+    height: 100vh;
 }
 
 .coverbck{
@@ -75,15 +77,16 @@
 #loginform input{
     border-radius: 5px; 
     border: 1px solid var(--gold1);
-    font-size: 1.2em;
+    font-size: min(5vw,1.2em);
     padding: 1em 2.5em 1em 2.5em;
     height: 1.5em;
     box-sizing: border-box;
+    width: 100%;
 }
 
 #loginform i{
     position: absolute;
-    font-size: 1.2em;
+    font-size: min(5vw,1.2em);
     border-radius: 100%;
     width: 2em; height: 2em;
     line-height: 2.5em;

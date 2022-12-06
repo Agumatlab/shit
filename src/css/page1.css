@@ -29,6 +29,8 @@
     background-repeat:   no-repeat;
     background-position: center center;
     background-image: url(img_home/logo_simple.png);
+    
+    /* Filter: chroma(Color = #FFFFFF); */
 
     max-width: 100px;
     max-height: 100px;
