@@ -18,7 +18,6 @@ body:has(#fra:not(:checked)) .fra{display:none;}
     
     gap: .5rem;
     border-radius: 1em;
-    /* scale: .7; */
 
     align-self: baseline;
     justify-self: right;

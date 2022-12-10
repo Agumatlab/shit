@@ -32,7 +32,6 @@ html{ overscroll-behavior-y: contain; }
 ::-webkit-scrollbar-track {background: var(--radio-color);}
 ::-webkit-scrollbar:hover {width: 20px; }
 ::-webkit-scrollbar-thumb {background: var(--gold2); border-radius: 10px;}
-/* END of scrollbar */
 
 
 .fullScreen { width: 100vw; height: 100vh; }
@@ -63,62 +62,79 @@ nav{
     width: 100vw;
     opacity: .5;
     transition: top 1s;
-    box-sizing: border-box;
     
-    display: flex;    
-    /* justify-content: space-between;  */
+    display: grid;  
+    grid-template-rows: 1;  
+    grid-template-columns: 40px 80px auto;
+    
     backdrop-filter: blur(3px);
-
-    /* box-shadow: 0px 5px 5px 5px var(--clr-body-bg); */
-    padding: 2px 5px 2px 5px;
-    align-items: center;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    vertical-align: baseline;
+    
 }
 
-@media (max-width: 400px) {
-    nav{top: -1.5em; height: 4em;}
-} 
 
-nav:hover{
-    top: 0px;
-    opacity: .9;
-}
-
-nav *{opacity: 0; transition: opacity 2s; }
+nav:hover{top: 0px;   opacity: .9;}
+nav *{opacity: 0; transition: opacity 2s;     justify-items: center;}
 nav:hover *{opacity: 1; transition: opacity 1s;} */
 nav:active{opacity: 1;}
+
+#navbar label{ display: none; color: var(--clr-text);}
+#navbar label:hover{ color: var(--clr-heading);}
+
+#link-expand{  display: none; }
 
 @media (min-width: 500px){
     #navbar #link-expand{display: none;}
 }
 
 @media (max-width: 500px){
-    #navbar:has(#link-expand:not(:checked)) #redirects {display: none;}
+    #navbar:has(#link-expand:not(:checked)) #summary {display: none;}
+    
+    #summary{
+        flex-direction: column;
+        text-align: center;
+        
+        height: 100%;
+        overflow-y: visible;
+        backdrop-filter: blur(300px);
+        padding: 2px;
+        gap: 0px;
+        line-height: 1em;
+    }
+
+    #navbar label{ font-size: large; display: inline;}
+    #navbar:has(#link-expand:checked) label{ 
+        transform: rotate(180deg);
+        transition-duration: 1s;
+    }
 }
 
 #redirects {
     display: flex; 
     flex-direction: row;
-    position: absolute;
-    right: 20px;
+    
     gap: 15px;
     line-height: 2em;
     justify-content: right;
+    align-items: baseline;
 }
 
 #summary{
     display: flex;
     gap: 10px;
-    padding: 50px 0 -150px 0;
+    align-items: center;
 }
 #navbar a{ 
     text-decoration: none; 
-    padding: 3px;
+    padding: 0px;
+    margin: 0px;
     color: var(--clr-text);
 }
 #navbar a:hover{ 
     color: var(--clr-heading); 
-    /* background: var(--clr-body-bg);
-    border-radius: 8px; */
+    text-decoration: underline;
 }
 
 
@@ -189,18 +205,6 @@ nav:active{opacity: 1;}
 
 .open h2{ width: 2em; height: 1em; }
 
-
-/* CSS PER IMAGE SLIDING ---------------------------------------*/
-/* #half{ background: red; opacity: .5;}
-#edge{width:4px; background:black;
-    border: 1px solid black;
-    height: 50vh;
-    position:relative; left:100%;
-}
-
-#edge:hover{ width: 8px;} */
-/* end of img sliding */
-
 @media (min-width:500px) {
  
     main>div:not(.on-view) *{ 
@@ -221,3 +225,13 @@ nav:active{opacity: 1;}
 }
 
 
+/* CSS PER IMAGE SLIDING ---------------------------------------*/
+/* #half{ background: red; opacity: .5;}
+#edge{width:4px; background:black;
+    border: 1px solid black;
+    height: 50vh;
+    position:relative; left:100%;
+}
+
+#edge:hover{ width: 8px;} */
+/* end of img sliding */
