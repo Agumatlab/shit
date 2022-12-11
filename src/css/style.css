@@ -27,13 +27,13 @@ body{
 
 html{ overscroll-behavior-y: contain; }
 
-/* SCROLLBAR */
+/* SCROLLBAR -------------------------------------- */
 ::-webkit-scrollbar {width: 2px; }
 ::-webkit-scrollbar-track {background: var(--radio-color);}
 ::-webkit-scrollbar:hover {width: 20px; }
 ::-webkit-scrollbar-thumb {background: var(--gold2); border-radius: 10px;}
 
-
+/* GENERICS --------------------------------------- */
 .fullScreen { width: 100vw; height: 100vh; }
 
 .middle{  
@@ -55,6 +55,8 @@ nav{
     position: fixed;
     z-index: 5;
     height: 3em;
+    max-height: 3em;
+    overflow:visible;
     top: -2.5em;
 
     background: linear-gradient(to left top,
@@ -65,19 +67,20 @@ nav{
     
     display: grid;  
     grid-template-rows: 1;  
-    grid-template-columns: 40px 80px auto;
+    grid-template-columns: 2em 80px auto;
     
     backdrop-filter: blur(3px);
-    padding: 5px 5px;
+    padding: 5px 10px;
+    column-gap: min(10px,3vw);
+
     box-sizing: border-box;
-    vertical-align: baseline;
-    
+    align-items: center;
 }
 
 
 nav:hover{top: 0px;   opacity: .9;}
-nav *{opacity: 0; transition: opacity 2s;     justify-items: center;}
-nav:hover *{opacity: 1; transition: opacity 1s;} */
+nav *{opacity: 0; transition: opacity 2s;}
+nav:hover *{opacity: 1; transition: opacity 1s;} 
 nav:active{opacity: 1;}
 
 #navbar label{ display: none; color: var(--clr-text);}

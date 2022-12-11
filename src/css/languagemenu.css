@@ -8,24 +8,22 @@ body:has(#fra:checked) .fra{display:visible;}
 body:has(#fra:not(:checked)) .fra{display:none;}
 
 .lang-picker {
-    border: 0;
-    display: flex;
-    flex-direction: column;
+    
+    margin-top: .45em;
+    min-height: 1em;
+    background: var(--g2);
 
-    min-height: 2em;
-    
-    background: var(--g0);
-    
     gap: .5rem;
     border-radius: 1em;
 
-    align-self: baseline;
+    align-self: start;
     justify-self: right;
-    margin-top: .5rem;
+
+    display: flex;
+    flex-direction: column;
 
     justify-content: center;
     align-items: flex-start;
-    align-content: flex-start;
 }
   
 .lang-picker input[type="radio"] {
