@@ -1,0 +1,150 @@
+#body-demo>div{
+
+    height: 200vh;
+    width: 100vw;
+    
+    color: black;
+    
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 2em;
+    padding: 2em 0;
+}
+
+#body-demo>div>*{box-shadow: 5px 5px 2px gainsboro;}
+
+#my-terrain{
+    /* border: 2px solid black; */
+    border-radius: 5px;
+    width: 80vw;
+    height:min(45vw,500px);
+    display: flex;
+    flex-direction: column;
+}
+
+.band-picker,#ir-legend{
+    z-index: 1;
+}
+
+#my-pitch{
+    position: relative;
+    margin-top:-7em; 
+    transition: all 1s;
+    margin-bottom: 0;
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 100%;
+    
+    background-blend-mode: luminosity;
+    background-image: url('./img_home/layer0.png'); 
+    background-size:     cover;  
+    background-repeat:   no-repeat;
+    background-position: center center;
+    
+}
+
+.band-picker{
+    width: 20em;
+    padding: .1em;
+
+    align-self: flex-start;
+    margin-left: -3em;
+    gap: .5em;
+    display: flex; flex-direction: column;
+}
+
+.band-picker input:checked{
+    background: var(--g2);
+    outline-color: var(--g2);
+}
+
+.band-picker label{
+    opacity: 0;
+    padding: 3px;
+    min-width: 7ch;
+    text-align: center;
+    margin-left: -.5em;
+    z-index: -1;
+    border-radius: 0 5px 5px 0;
+    background: linear-gradient(to left, var(--g0),var(--clr-body-bg));
+}
+
+.band-picker>div{display: flex; align-items: center;}
+.band-picker div:hover>input:not(:checked){background-color: var(--g0);}
+.band-picker div:hover>label{opacity:1; transition: all 1s;}
+.band-picker div:has(input:checked)>label{
+    background:linear-gradient(to left,var(--g2),var(--clr-body-bg));
+}
+
+#meteo{
+    width: 80vw;
+    height: 250px;
+    border-radius: 5px;
+}
+
+.band-picker input{
+    transition: all 1s;
+    appearance: none;
+    background-size:     contain;  
+    background-repeat:   no-repeat;
+    background-position: center center;
+    width: 2em;
+    height: 2em;
+
+    outline: 3px solid var(--g0);
+    border-radius: 50%;
+}
+
+#truecol{background-image: url('./img_home/color-palette-outline.svg');}
+#lai{background-image: url('./img_home/color-filter-outline.svg');}
+#ndvi{background-image: url('./img_home/contrast-outline.svg');}
+
+/* #truecol:checked{ --- } */
+#my-terrain:has(#lai:checked) #my-pitch{background-color: red;}
+#my-terrain:has(#ndvi:checked) #my-pitch{background-color: yellow;}
+
+#my-terrain:has(#truecol:checked) .truecol{display:flex;}
+#my-terrain:has(#lai:checked) .lai{display:flex;}
+#my-terrain:has(#ndvi:checked) .ndvi{display:flex;}
+
+
+#ir-legend{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 5px 5px;
+
+    background: var(--g0);
+    /* border: 1px solid black; */
+    border-top: none;
+    box-sizing: border-box;
+}
+
+.legend-labels{ display: none; transition: all 1s;}
+
+.legend-scale ul{
+    margin: 0;
+    padding: .2em;
+    list-style: none;
+}
+.legend-scale ul li {
+    list-style: none;
+    padding: 0 1em;
+}
+
+.legend-labels li span {
+    display: inline-block;
+    height: .7em;
+    width: 2em;
+    border-radius: 5px;
+}
+
+div:has(#calendar){gap:30px;}
+
+#calendar {
+    max-width: 1100px;
+    width: 900px;
+    margin: 40px auto;
+}

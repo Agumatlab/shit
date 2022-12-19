@@ -13,7 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4AGER</title>
 
-    <link rel="shortcut icon" type="image/x-icon" href="./css/img_home/logo_simple.jpg" />
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="./css/img_home/logo_simple.png" />
 
     <meta property="og:title" content="4AGER"/>
     <meta property="og:image" content="https://i.ibb.co/YTdzzpF/p5-layer-green-small.png"/>
@@ -25,8 +26,45 @@
 </head>
     
 <body id="body-home">
+ 
+     <!-- NavBar on top page -->
+   <nav id="navbar" class="transition">  
+        <!-- NavBar: language -->
+        <form class="lang-picker" action="">
+            <input type="radio" name="language" id="ita" checked>
+            <input type="radio" name="language" id="eng">
+            <input type="radio" name="language" id="fra">
+        </form>
 
-    <iframe src="topnav.html"></iframe>
+        <!-- NavBar: dark mode -->
+        <form class="color-picker" action="">
+            <fieldset>
+                <label for="light" class="visually-hidden">Light</label>
+                <input type="radio" name="theme" id="light" checked>
+            
+                <label for="dark" class="visually-hidden">Dark</label>
+                <input type="radio" name="theme" id="dark">
+            </fieldset>
+        </form>  
+
+        <!-- NavBar: links -->
+        <div id="redirects">
+            
+            <input type="checkbox" id="link-expand">
+            <label for="link-expand"><ion-icon name="chevron-back-circle-outline"></ion-icon></label>
+            
+            <div id="summary">
+                <a href="#first-to-see">Home</a>
+                <a href="#p2"><span class="ita">Chi siamo</span><span class="eng">Who we are</span></a>
+                <a href="#p5"><span class="ita">Prova la Demo</span><span class="eng">Go to Demo</span></a>
+                <a href="#p7"><span class="ita">Valori</span><span class="eng">Vision</span></a>
+            </div>
+
+            <a href="signin.html" class="posts"><span class="ita">Accedi</span><span class="eng">Log in</span></a>
+            
+        </div>
+    </nav> 
+
 
     <!-- Menu in basso a dx -->
     <div class="expand-menu">
@@ -88,7 +126,7 @@ Dear 4Ager staff, ..."
                 </a>
             </li>
             <li class="list">
-                <a>
+                <a href="./demo.html">
                     <span class="icon"><ion-icon name="layers-outline"></ion-icon></span>
                     <span class="text">Demo</span>
                 </a>

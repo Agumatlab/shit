@@ -30,11 +30,6 @@ module.exports = {
             minify: true
         }),
         new HtmlWebpackPlugin({
-            filename: 'topnav.html',
-            template: path.resolve(__dirname, '../src/demo.html'),
-            minify: true
-        }),
-        new HtmlWebpackPlugin({
             filename: 'demo.html',
             template: path.resolve(__dirname, '../src/demo.html'),
             minify: true

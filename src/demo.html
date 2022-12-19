@@ -3,12 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="./css/img_home/logo_simple.png" />
+
+    <title>DEMO</title>
+
+    <script src='../node_modules/fullcalendar/index.global.js'></script>
+
+    <!-- <script type="text/javascript" src="https://cdn.addevent.com/libs/stc/1.0.2/stc.min.js" async defer></script> -->
+
 </head>
-<body>
-    <h1>ciao</h1>
-    hello
+<body id="body-demo">
+    
+
+        <!-- <div title="Add to Calendar" class="addeventstc" data-id="Rx538969"
+        style="background: grey;">
+            Add to Calendar
+        </div> -->
+        <div>
+            <div id="my-terrain">
+                    <form class="band-picker" action="">
+                        
+                        <div>
+                            <input type="radio" name="opt" id="truecol" checked>
+                            <label for="truecol">TRUE</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="opt" id="lai">
+                            <label for="lai">LAI</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="opt" id="ndvi">
+                            <label for="ndvi">NDVI</label>
+                        </div>
+                    </form>
+                
+                <div id="my-pitch"></div>
+                
+                <div id="ir-legend" class="legend-scale">
+                    <ul class="legend-labels truecol">
+                        <li><span style='background:red;'></span> One</li>
+                        <li><span style='background:blue;'></span> Two</li>
+                        <li><span style='background:yellow;'></span> Three</li>
+                    </ul>
+                    <ul class="legend-labels lai">
+                        <li><span style='background:green;'></span> One</li>
+                        <li><span style='background:orange;'></span> Two</li>
+                    </ul>
+                    <ul class="legend-labels ndvi">
+                        <li><span style='background:cyan;'></span> One</li>
+                        <li><span style='background:violet;'></span> Two</li>
+                        <li><span style='background:gold;'></span> Three</li>
+                        <li><span style='background:rosybrown;'></span> Four</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="display: flex; flex-direction: row;">
+                <div id='external-events'>
+                    <p>
+                    <strong>Draggable Events</strong>
+                    </p>
+                
+                    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+                    <div class='fc-event-main'>My Event 1</div>
+                    </div>
+                    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+                    <div class='fc-event-main'>My Event 2</div>
+                    </div>
+                    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+                    <div class='fc-event-main'>My Event 3</div>
+                    </div>
+                    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+                    <div class='fc-event-main'>My Event 4</div>
+                    </div>
+                    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+                    <div class='fc-event-main'>My Event 5</div>
+                    </div>
+                
+                    <p>
+                    <input type='checkbox' id='drop-remove' />
+                    <label for='drop-remove'>remove after drop</label>
+                    </p>
+                </div>
+                
+                <div id='calendar-container'>
+                    <div id='calendar'></div>
+                </div>
+            </div>
+
+            <iframe id="meteo" 
+                src="https://www.meteoblue.com/en/weather/maps/widget?windAnimation=0&windAnimation=1&gust=0&gust=1&satellite=0&satellite=1&cloudsAndPrecipitation=0&cloudsAndPrecipitation=1&temperature=0&temperature=1&sunshine=0&sunshine=1&extremeForecastIndex=0&extremeForecastIndex=1&geoloc=detect&tempunit=C&windunit=km%252Fh&lengthunit=metric&zoom=5&autowidth=auto"  
+                frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox">
+            </iframe><div> <a href="https://www.meteoblue.com/en/weather/maps/index?utm_source=weather_widget&utm_medium=linkus&utm_content=map&utm_campaign=Weather%2BWidget" target="_blank" rel="noopener"></a></div>
+        
+            <div>consigli pratici
+                <ion-icon name="footsteps-outline"></ion-icon>
+            </div>
+
+            <div>stats
+                <ion-icon name="pie-chart-outline"></ion-icon>
+            </div>
+            
+        </div>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     
 </body>
 </html>
+
+
+    <!-- <div>
+    <div id='external-events'>
+        <p>
+        <strong>Draggable Events</strong>
+        </p>
+    
+        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+        <div class='fc-event-main'>My Event 1</div>
+        </div>
+        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+        <div class='fc-event-main'>My Event 2</div>
+        </div>
+        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+        <div class='fc-event-main'>My Event 3</div>
+        </div>
+        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+        <div class='fc-event-main'>My Event 4</div>
+        </div>
+        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+        <div class='fc-event-main'>My Event 5</div>
+        </div>
+    
+        <p>
+        <input type='checkbox' id='drop-remove' />
+        <label for='drop-remove'>remove after drop</label>
+        </p>
+    </div>
+    
+    <div id='calendar-container'>
+        <div id='calendar'></div>
+    </div> -->
