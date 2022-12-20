@@ -145,6 +145,6 @@ div:has(#calendar){gap:30px;}
 
 #calendar {
     max-width: 1100px;
-    width: 900px;
+    width: 70vw;
     margin: 40px auto;
 }

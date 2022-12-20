@@ -13,7 +13,6 @@ import './css/page9.css'
 import './css/navigationmenu.css'
 
 import './css/signin.css'
-import './css/demo.css'
 
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
@@ -21,56 +20,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import { randFloat } from 'three/src/math/MathUtils'
 
-import { Calendar } from '@fullcalendar/core';
-import interactionPlugin, { Draggable } from '@fullcalendar/interaction';
-
-if (document.querySelector('body').id=="body-demo"){
-
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var Calendar = FullCalendar.Calendar;
-        var Draggable = FullCalendar.Draggable;
-      
-        var containerEl = document.getElementById('external-events');
-        var calendarEl = document.getElementById('calendar');
-        var checkbox = document.getElementById('drop-remove');
-      
-        // initialize the external events
-        // -----------------------------------------------------------------
-      
-        new Draggable(containerEl, {
-          itemSelector: '.fc-event',
-          eventData: function(eventEl) {
-            return {
-              title: eventEl.innerText
-            };
-          }
-        });
-      
-        // initialize the calendar
-        // -----------------------------------------------------------------
-      
-        var calendar = new Calendar(calendarEl, {
-          headerToolbar: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay'
-          },
-          editable: true,
-          droppable: true, // this allows things to be dropped onto the calendar
-          drop: function(info) {
-            // is the "remove after drop" checkbox checked?
-            if (checkbox.checked) {
-              // if so, remove the element from the "Draggable Events" list
-              info.draggedEl.parentNode.removeChild(info.draggedEl);
-            }
-          }
-        });
-      
-        calendar.render();
-    });
-
-} else if (document.querySelector('body').id=="body-home") {
+if (document.querySelector('body').id=="body-home") {
 
 // ------------BEGIN OF FAVOURITE THEME COLOR
     const colorThemes = document.querySelectorAll('[name="theme"]');
